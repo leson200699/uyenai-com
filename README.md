@@ -1,51 +1,117 @@
-# CodeIgniter 4 Framework
+# UyenAI.com - CodeIgniter 4 Project
 
-## What is CodeIgniter?
+🚀 **Website quản lý nội dung và dịch vụ AI với CodeIgniter 4**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📋 Tính năng chính
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- ✅ **Quản lý tin tức** với Rich Text Editor (TinyMCE)
+- ✅ **Quản lý kiến thức** với File Manager tích hợp
+- ✅ **Hệ thống sách nói** (Audiobooks)
+- ✅ **Quản lý sản phẩm và dịch vụ**
+- ✅ **Hệ thống đặt hàng và thanh toán**
+- ✅ **Dashboard quản trị viên**
+- ✅ **File Manager** với khả năng chèn hình ảnh vào nội dung
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 🛠️ Công nghệ sử dụng
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- **Framework:** CodeIgniter 4
+- **Database:** MySQL
+- **Frontend:** Bootstrap, TailwindCSS
+- **Rich Text Editor:** TinyMCE
+- **File Management:** Custom File Manager
+- **Version Control:** Git
 
-## Important Change with index.php
+## 📦 Cài đặt
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/leson200699/uyenai-com.git
+   cd uyenai-com
+   ```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+2. **Cài đặt dependencies:**
+   ```bash
+   composer install
+   ```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+3. **Cấu hình môi trường:**
+   ```bash
+   cp env .env
+   ```
+   Chỉnh sửa file `.env` với thông tin database và cấu hình cần thiết.
 
-## Repository Management
+4. **Chạy migrations:**
+   ```bash
+   php spark migrate
+   ```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+5. **Seed dữ liệu mẫu:**
+   ```bash
+   php spark db:seed InitialSeeder
+   ```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+6. **Khởi động server:**
+   ```bash
+   php spark serve
+   ```
 
-## Contributing
+## 📁 Cấu trúc dự án
 
-We welcome contributions from the community.
+```
+uyenai-com/
+├── app/
+│   ├── Controllers/
+│   │   ├── Admin/          # Controllers quản trị
+│   │   ├── Auth.php        # Xác thực người dùng
+│   │   └── Home.php        # Trang chủ
+│   ├── Models/             # Models cho database
+│   ├── Views/
+│   │   ├── admin/          # Views quản trị
+│   │   ├── layouts/        # Layout templates
+│   │   └── partials/       # Components tái sử dụng
+│   └── Config/             # Cấu hình ứng dụng
+├── public/
+│   ├── js/
+│   │   ├── rich-text-editor.js    # TinyMCE integration
+│   │   └── filemanager.js         # File manager
+│   ├── css/
+│   │   └── rich-text-editor.css   # Styles cho editor
+│   └── uploads/            # File uploads
+└── writable/               # Cache, logs, sessions
+```
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## 🎯 Tính năng nổi bật
 
-## Server Requirements
+### Rich Text Editor với File Manager
+- **TinyMCE Editor** cho việc soạn thảo nội dung
+- **File Manager Modal** để chọn và chèn hình ảnh
+- **Drag & Drop** file upload
+- **Preview** hình ảnh trước khi chèn
+
+### Hệ thống quản trị
+- Dashboard tổng quan
+- Quản lý tin tức và danh mục
+- Quản lý kiến thức
+- Quản lý sản phẩm/dịch vụ
+- Quản lý đơn hàng
+- File Manager
+
+## 🔧 Requirements
 
 PHP version 8.1 or higher is required, with the following extensions installed:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
+
+## 📞 Liên hệ
+
+- **Website:** [uyenai.com](https://uyenai.com)
+- **Email:** developer@uyenai.com
+- **GitHub:** [@leson200699](https://github.com/leson200699)
+
+---
+
+⭐ **Nếu dự án này hữu ích, hãy để lại một star!** ⭐
 
 > [!WARNING]
 > - The end of life date for PHP 7.4 was November 28, 2022.
