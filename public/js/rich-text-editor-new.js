@@ -169,6 +169,10 @@ window.RichTextEditor = {
             'redo': { icon: '↷', title: 'Redo' },
             'source': { icon: '</>', title: 'Source Code' }
         };
+        
+        return configs[command] || { icon: command, title: command };
+    },
+
     // Thực thi commands
     executeCommand: function(command, editorId) {
         const instance = this.instances[editorId];
@@ -335,99 +339,115 @@ window.RichTextEditor = {
         }
     },
 
-    // Mở File Manager để chọn hình ảnh
-    openFileManager: function(editor) {
+    // Mở File Manager
+    openFileManager: function(editorId) {
         const modal = document.createElement('div');
-        modal.id = 'fileManagerModal';
-        modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50';
-        modal.innerHTML = `
-            <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
-                <div class="mt-3">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-lg font-medium text-gray-900">Chọn hình ảnh</h3>
-                        <button type="button" onclick="window.RichTextEditor.closeFileManager()" class="text-gray-400 hover:text-gray-600">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <iframe src="/admin/filemanager?mode=select" 
-                            width="100%" 
-                            height="500" 
-                            frameborder="0"
-                            id="fileManagerFrame"></iframe>
-                </div>
-            </div>
+        modal.className = 'file-manager-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         `;
-        
-        document.body.appendChild(modal);
-        
-        // Store editor reference
-        this.currentEditor = editor;
-        
-        // Listen for messages from iframe
-        this.messageHandler = (event) => {
-            if (event.data.type === 'fileSelected') {
-                const imagePath = event.data.file;
-                if (editor && imagePath) {
-                    // Insert image into TinyMCE
-                    const imageHtml = `<img src="${imagePath}" alt="Hình ảnh" class="img-responsive" style="max-width: 100%; height: auto;">`;
-                    editor.insertContent(imageHtml);
-                }
-                this.closeFileManager();
-            }
+
+        const content = document.createElement('div');
+        content.style.cssText = `
+            background: white;
+            width: 80%;
+            height: 80%;
+            border-radius: 8px;
+            position: relative;
+        `;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = '/admin/filemanager?mode=select';
+        iframe.style.cssText = `
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        `;
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1;
+        `;
+
+        closeBtn.onclick = () => {
+            document.body.removeChild(modal);
         };
-        
-        window.addEventListener('message', this.messageHandler);
-    },
 
-    // Đóng File Manager modal
-    closeFileManager: function() {
-        const modal = document.getElementById('fileManagerModal');
-        if (modal) {
-            modal.remove();
-        }
-        
-        // Remove event listener
-        if (this.messageHandler) {
-            window.removeEventListener('message', this.messageHandler);
-            this.messageHandler = null;
-        }
-    },
+        content.appendChild(iframe);
+        content.appendChild(closeBtn);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
 
-    // Thêm nút chèn ảnh bên ngoài editor
-    addInsertImageButton: function(buttonSelector, editorSelector) {
-        const button = document.querySelector(buttonSelector);
-        if (button) {
-            button.addEventListener('click', () => {
-                const editor = tinymce.get(editorSelector.replace('#', ''));
-                if (editor) {
-                    this.openFileManager(editor);
+        // Lắng nghe message từ file manager
+        window.addEventListener('message', (event) => {
+            if (event.data.action === 'selectFile') {
+                const imagePath = event.data.file;
+                const instance = this.instances[editorId];
+                if (instance) {
+                    const editor = instance.editor;
+                    editor.focus();
+                    document.execCommand('insertImage', false, imagePath);
+                    this.updateContent(editorId);
                 }
-            });
+                document.body.removeChild(modal);
+            }
+        }, { once: true });
+    },
+
+    // Lấy nội dung editor
+    getContent: function(editorId) {
+        const instance = this.instances[editorId];
+        return instance ? instance.editor.innerHTML : '';
+    },
+
+    // Đặt nội dung editor
+    setContent: function(editorId, content) {
+        const instance = this.instances[editorId];
+        if (instance) {
+            instance.editor.innerHTML = content;
+            this.updateContent(editorId);
+            this.updatePlaceholder(editorId);
         }
     },
 
-    // Destroy editor
-    destroy: function(selector) {
-        const editor = tinymce.get(selector.replace('#', ''));
-        if (editor) {
-            editor.destroy();
+    // Hủy editor
+    destroy: function(editorId) {
+        const instance = this.instances[editorId];
+        if (instance) {
+            const textarea = instance.textarea;
+            textarea.style.display = 'block';
+            instance.container.parentNode.removeChild(instance.container);
+            delete this.instances[editorId];
         }
     }
 };
 
-// Auto-initialize cho các trang có class 'rich-text-editor'
+// Auto-initialize khi DOM ready
 document.addEventListener('DOMContentLoaded', function() {
-    const richTextElements = document.querySelectorAll('.rich-text-editor');
-    if (richTextElements.length > 0) {
-        const selectors = Array.from(richTextElements).map(el => '#' + el.id);
-        window.RichTextEditor.init(selectors);
-        
-        // Add insert image buttons if they exist
-        richTextElements.forEach(el => {
-            const insertBtn = document.querySelector(`[data-editor-target="${el.id}"]`);
-            if (insertBtn) {
-                window.RichTextEditor.addInsertImageButton(`[data-editor-target="${el.id}"]`, '#' + el.id);
-            }
-        });
+    // Tự động khởi tạo cho các textarea có class 'rich-text-editor'
+    const textareas = document.querySelectorAll('textarea.rich-text-editor');
+    if (textareas.length > 0) {
+        window.RichTextEditor.init('textarea.rich-text-editor');
     }
 });

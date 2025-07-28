@@ -33,16 +33,9 @@
                     <textarea id="content" 
                               name="content" 
                               rows="20"
-                              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rich-text-editor"
+                              class="rich-text-editor"
                               placeholder="Nhập nội dung bài viết..."
                               required><?= old('content', $knowledge['content']) ?></textarea>
-                    <div class="mt-2">
-                        <button type="button" 
-                                data-editor-target="content"
-                                class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm transition-colors">
-                            <i class="fas fa-image mr-1"></i>Chèn hình ảnh từ File Manager
-                        </button>
-                    </div>
                     <?php if (isset($errors['content'])): ?>
                         <p class="text-red-500 text-sm mt-1"><?= $errors['content'] ?></p>
                     <?php endif; ?>
@@ -143,4 +136,13 @@
         </div>
     </form>
 </div>
+
+<script>
+// Khởi tạo custom rich text editor
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.RichTextEditor) {
+        window.RichTextEditor.init('textarea.rich-text-editor');
+    }
+});
+</script>
 <?= $this->endSection() ?> 

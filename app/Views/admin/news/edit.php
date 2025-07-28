@@ -41,16 +41,9 @@
                         <textarea name="content" 
                                   id="content" 
                                   rows="20"
-                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 rich-text-editor" 
+                                  class="rich-text-editor" 
+                                  placeholder="Nhập nội dung tin tức..."
                                   required><?= old('content', $news['content']) ?></textarea>
-                        <div class="mt-2">
-                            <button type="button" 
-                                    id="insertImageBtn"
-                                    data-editor-target="content"
-                                    class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm transition-colors">
-                                <i class="fas fa-image mr-1"></i>Chèn hình ảnh từ File Manager
-                            </button>
-                        </div>
                     </div>
                 </div>
 
@@ -138,6 +131,13 @@ document.getElementById('image_path').addEventListener('change', function() {
     } else {
         container.classList.add('hidden');
         removeBtn.style.display = 'none';
+    }
+});
+
+// Khởi tạo custom rich text editor
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.RichTextEditor) {
+        window.RichTextEditor.init('textarea.rich-text-editor');
     }
 });
 </script>

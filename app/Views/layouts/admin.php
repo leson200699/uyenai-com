@@ -19,11 +19,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Rich Text Editor Styles -->
-    <link rel="stylesheet" href="/css/rich-text-editor.css">
-    
-    <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Custom Rich Text Editor Styles -->
+    <link rel="stylesheet" href="/css/custom-rich-text-editor.css">
 
     <style>
         body {
@@ -144,6 +141,9 @@
         }
     });
 </script>
+
+<!-- Custom Rich Text Editor -->
+<script src="/js/rich-text-editor-new.js"></script>
 
 <?= $this->renderSection('scripts') ?>
 </body>
