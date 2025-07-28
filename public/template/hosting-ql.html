@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Chi Tiết Hosting - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            
+            <div>
+                <button id="submenu-manage-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="hard-drive" class="w-5 h-5 mr-3"></i>
+                        Quản Lý Dịch Vụ
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-manage" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Hosting & VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tên Miền</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <div>
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2 text-sm font-medium text-gray-500">
+                        <li><a href="#" class="hover:text-indigo-600">Quản lý dịch vụ</a></li>
+                        <li><div class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4"></i><span class="ml-1 md:ml-2 text-gray-800">mycoolwebsite.com</span></div></li>
+                    </ol>
+                </nav>
+                <h1 class="text-xl font-bold text-gray-900">Quản Lý Hosting: mycoolwebsite.com</h1>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left Column: Info & Stats -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Quick Actions -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="#" class="bg-white p-4 rounded-lg border text-center hover:shadow-md hover:border-indigo-500 transition-all">
+                            <i data-lucide="log-in" class="w-8 h-8 mx-auto text-indigo-600"></i>
+                            <p class="mt-2 text-sm font-semibold">Đăng nhập cPanel</p>
+                        </a>
+                        <a href="#" class="bg-white p-4 rounded-lg border text-center hover:shadow-md hover:border-indigo-500 transition-all">
+                            <i data-lucide="mail" class="w-8 h-8 mx-auto text-indigo-600"></i>
+                            <p class="mt-2 text-sm font-semibold">Quản lý Email</p>
+                        </a>
+                        <a href="#" class="bg-white p-4 rounded-lg border text-center hover:shadow-md hover:border-indigo-500 transition-all">
+                            <i data-lucide="database" class="w-8 h-8 mx-auto text-indigo-600"></i>
+                            <p class="mt-2 text-sm font-semibold">Quản lý Database</p>
+                        </a>
+                        <a href="#" class="bg-white p-4 rounded-lg border text-center hover:shadow-md hover:border-indigo-500 transition-all">
+                            <i data-lucide="folder-git-2" class="w-8 h-8 mx-auto text-indigo-600"></i>
+                            <p class="mt-2 text-sm font-semibold">File Manager</p>
+                        </a>
+                    </div>
+                    <!-- Usage Stats -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-bold mb-4">Thông số sử dụng</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-sm font-medium">Dung lượng ổ cứng</label>
+                                <div class="w-full bg-gray-200 rounded-full h-4 mt-1">
+                                    <div class="bg-indigo-600 h-4 rounded-full" style="width: 45%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1 text-right">6.75 GB / 15 GB (45%)</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium">Băng thông</label>
+                                <div class="w-full bg-gray-200 rounded-full h-4 mt-1">
+                                    <div class="bg-green-500 h-4 rounded-full" style="width: 22%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1 text-right">220 GB / 1000 GB (22%)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Service Details -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl border shadow-sm">
+                        <h3 class="text-lg font-bold p-4 border-b">Chi Tiết Dịch Vụ</h3>
+                        <div class="p-4 space-y-3 text-sm">
+                            <div class="flex justify-between"><span>Gói dịch vụ:</span><span class="font-medium">Hosting Doanh Nghiệp</span></div>
+                            <div class="flex justify-between"><span>Trạng thái:</span><span class="font-medium text-green-600">Đang hoạt động</span></div>
+                            <div class="flex justify-between"><span>Ngày đăng ký:</span><span class="font-medium">05/07/2025</span></div>
+                            <div class="flex justify-between"><span>Ngày hết hạn:</span><span class="font-medium">05/07/2026</span></div>
+                            <div class="flex justify-between"><span>Địa chỉ IP:</span><span class="font-medium">103.22.11.45</span></div>
+                        </div>
+                        <div class="p-4 border-t space-y-2">
+                             <button class="w-full bg-indigo-600 text-white font-bold py-2 rounded-lg hover:bg-indigo-700">Gia Hạn Dịch Vụ</button>
+                             <button class="w-full bg-gray-200 text-gray-800 font-bold py-2 rounded-lg hover:bg-gray-300">Nâng Cấp Gói</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-manage-toggle', 'submenu-manage');
+    document.getElementById('submenu-manage-toggle').click();
+</script>
+</body>
+</html>

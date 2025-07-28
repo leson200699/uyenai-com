@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Định Kỳ & Hoá Đơn - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="hard-drive" class="w-5 h-5 mr-3"></i>
+                Quản Lý Dịch Vụ
+            </a>
+            
+            <div>
+                <button id="submenu-billing-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="credit-card" class="w-5 h-5 mr-3"></i>
+                        Thanh Toán & Hoá Đơn
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-billing" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Nạp tiền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Dịch vụ & Hoá đơn</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Lịch sử giao dịch</a>
+                </div>
+            </div>
+
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="user" class="w-5 h-5 mr-3"></i>
+                Thông tin cá nhân
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Dịch Vụ Định Kỳ & Hoá Đơn</h1>
+             <div class="flex items-center gap-4">
+                <div class="text-right">
+                    <p class="text-xs text-gray-500">Số dư</p>
+                    <p class="font-bold text-indigo-600">1.250.000đ</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <!-- Recurring Services -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Các dịch vụ đang hoạt động</h2>
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-500 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Dịch vụ</th>
+                                    <th scope="col" class="px-6 py-3">Chu kỳ</th>
+                                    <th scope="col" class="px-6 py-3">Ngày gia hạn kế tiếp</th>
+                                    <th scope="col" class="px-6 py-3">Chi phí</th>
+                                    <th scope="col" class="px-6 py-3 text-right">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Hosting Doanh Nghiệp - mycoolwebsite.com</td>
+                                    <td class="px-6 py-4">Hàng năm</td>
+                                    <td class="px-6 py-4">05/07/2026</td>
+                                    <td class="px-6 py-4 font-semibold">1.188.000đ</td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="font-medium text-indigo-600 hover:underline">Quản lý</a></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">VPS 2 - vps-main-server</td>
+                                    <td class="px-6 py-4">Hàng tháng</td>
+                                    <td class="px-6 py-4 text-orange-600 font-semibold">25/07/2025</td>
+                                    <td class="px-6 py-4 font-semibold">280.000đ</td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="font-medium text-indigo-600 hover:underline">Quản lý</a></td>
+                                </tr>
+                                 <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Dịch vụ SEO Tổng Thể</td>
+                                    <td class="px-6 py-4">Hàng tháng</td>
+                                    <td class="px-6 py-4">11/08/2025</td>
+                                    <td class="px-6 py-4 font-semibold">15.000.000đ</td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="font-medium text-red-600 hover:underline">Hủy gia hạn</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoices History -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Lịch sử hoá đơn</h2>
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-500 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Mã Hoá Đơn</th>
+                                    <th scope="col" class="px-6 py-3">Ngày phát hành</th>
+                                    <th scope="col" class="px-6 py-3">Nội dung</th>
+                                    <th scope="col" class="px-6 py-3">Số tiền</th>
+                                    <th scope="col" class="px-6 py-3">Trạng thái</th>
+                                    <th scope="col" class="px-6 py-3 text-right">Tải về</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#HD2025-0711</td>
+                                    <td class="px-6 py-4">11/07/2025</td>
+                                    <td class="px-6 py-4">Gia hạn Dịch vụ SEO T.07/2025</td>
+                                    <td class="px-6 py-4 font-semibold">15.000.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Đã thanh toán</span></td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="text-gray-500 hover:text-indigo-600"><i data-lucide="download" class="w-5 h-5"></i></a></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#HD2025-0705</td>
+                                    <td class="px-6 py-4">05/07/2025</td>
+                                    <td class="px-6 py-4">Đăng ký Hosting Doanh Nghiệp (1 năm)</td>
+                                    <td class="px-6 py-4 font-semibold">1.188.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Đã thanh toán</span></td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="text-gray-500 hover:text-indigo-600"><i data-lucide="download" class="w-5 h-5"></i></a></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#HD2025-0625</td>
+                                    <td class="px-6 py-4">25/06/2025</td>
+                                    <td class="px-6 py-4">Gia hạn VPS 2 T.07/2025</td>
+                                    <td class="px-6 py-4 font-semibold">280.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-red-800 bg-red-100 rounded-full">Quá hạn</span></td>
+                                    <td class="px-6 py-4 text-right"><a href="#" class="text-gray-500 hover:text-indigo-600"><i data-lucide="download" class="w-5 h-5"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-billing-toggle', 'submenu-billing');
+    document.getElementById('submenu-billing-toggle').click();
+</script>
+</body>
+</html>

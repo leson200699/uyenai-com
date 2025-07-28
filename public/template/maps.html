@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng Dịch Vụ Google Maps - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .item-selected {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 2px #4f46e5;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <!-- Logo -->
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 p-4 space-y-1">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-tai-khoan-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                    <span class="flex items-center">
+                        <i data-lucide="key-round" class="w-5 h-5 mr-3"></i>
+                        Mua Tài Khoản
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-tai-khoan" class="hidden mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tài khoản AI</a>
+                </div>
+            </div>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Đặt Hàng Dịch Vụ
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch vụ SEO</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Thiết kế Website</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Chạy Quảng cáo</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Content & Page</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Google Maps</a>
+                </div>
+            </div>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="history" class="w-5 h-5 mr-3"></i>
+                Lịch sử đơn hàng
+            </a>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="wallet" class="w-5 h-5 mr-3"></i>
+                Nạp tiền
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Đặt Hàng Dịch Vụ Google Maps</h1>
+             <div class="flex items-center gap-4">
+                <span class="text-sm font-semibold text-indigo-600">Số dư: 1,250,000đ</span>
+                <div class="relative">
+                    <button class="flex items-center gap-2">
+                        <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Options -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Step 1: Choose Service Type -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-4">Bước 1: Chọn Dịch Vụ</h2>
+                        <div id="service-options" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-xl p-4 cursor-pointer hover:border-indigo-500 flex items-center gap-4" data-service="Xác minh Maps" data-price="1500000">
+                                <i data-lucide="check-circle" class="w-10 h-10 text-green-500"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">Xác Minh Google Maps</h3>
+                                    <p class="text-sm text-gray-600">Tạo mới và xác minh địa điểm doanh nghiệp.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-xl p-4 cursor-pointer hover:border-indigo-500 flex items-center gap-4" data-service="SEO Maps" data-price="5000000">
+                                <i data-lucide="trending-up" class="w-10 h-10 text-orange-500"></i>
+                                <div>
+                                    <h3 class="font-bold text-lg">SEO Google Maps</h3>
+                                    <p class="text-sm text-gray-600">Tối ưu, tăng hạng, tăng review cho địa điểm.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Business Info -->
+                    <div>
+                        <h2 class="text-xl font-bold mb-4">Bước 2: Cung Cấp Thông Tin Doanh Nghiệp</h2>
+                        <div class="bg-white p-4 rounded-xl border space-y-4">
+                            <div>
+                                <label for="business-name" class="font-semibold text-sm">Tên Doanh nghiệp / Cửa hàng</label>
+                                <input id="business-name" type="text" placeholder="Ví dụ: Công ty TNHH TechHub" class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label for="business-address" class="font-semibold text-sm">Địa chỉ chính xác</label>
+                                <input id="business-address" type="text" placeholder="Ví dụ: 123 Đường ABC, Phường X, Quận Y, TP. Z" class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                             <div>
+                                <label for="business-phone" class="font-semibold text-sm">Số điện thoại</label>
+                                <input id="business-phone" type="text" placeholder="Số điện thoại sẽ hiển thị trên Maps" class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Cart Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl border shadow-sm sticky top-24">
+                        <h2 class="text-xl font-bold p-4 border-b">Tóm Tắt Yêu Cầu</h2>
+                        <div id="cart-items" class="p-4 space-y-3 text-sm">
+                            <p class="text-gray-500">Vui lòng chọn dịch vụ.</p>
+                        </div>
+                        <div class="p-4 border-t">
+                            <div class="flex justify-between font-bold text-lg">
+                                <span>Tổng Cộng</span>
+                                <span id="total-price">0đ</span>
+                            </div>
+                            <p id="price-note" class="text-xs text-gray-500 mt-1 hidden">Giá có thể thay đổi tùy thuộc vào độ khó.</p>
+                        </div>
+                        <div class="p-4">
+                            <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">
+                                Gửi Yêu Cầu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-tai-khoan-toggle', 'submenu-tai-khoan');
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    document.getElementById('submenu-dich-vu-toggle').click();
+
+    const cart = {
+        service: null,
+        info: {}
+    };
+
+    const serviceOptions = document.getElementById('service-options');
+    const cartItemsEl = document.getElementById('cart-items');
+    const totalPriceEl = document.getElementById('total-price');
+    const priceNoteEl = document.getElementById('price-note');
+
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    }
+
+    function updateCart() {
+        cartItemsEl.innerHTML = '';
+        let total = 0;
+
+        if (!cart.service) {
+            cartItemsEl.innerHTML = '<p class="text-gray-500">Vui lòng chọn dịch vụ.</p>';
+            totalPriceEl.textContent = formatCurrency(0);
+            priceNoteEl.classList.add('hidden');
+            return;
+        }
+        
+        total = cart.service.price;
+        cartItemsEl.innerHTML += `<div class="flex justify-between"><span>Dịch vụ</span><span class="font-medium">${cart.service.name}</span></div>`;
+
+        if (cart.service.name === 'SEO Maps') {
+            priceNoteEl.classList.remove('hidden');
+            totalPriceEl.textContent = `Từ ${formatCurrency(total)}`;
+        } else {
+            priceNoteEl.classList.add('hidden');
+            totalPriceEl.textContent = formatCurrency(total);
+        }
+    }
+
+    serviceOptions.addEventListener('click', (e) => {
+        const selected = e.target.closest('[data-service]');
+        if (!selected) return;
+        
+        document.querySelectorAll('[data-service]').forEach(el => el.classList.remove('item-selected'));
+        selected.classList.add('item-selected');
+        
+        cart.service = {
+            name: selected.dataset.service,
+            price: parseInt(selected.dataset.price)
+        };
+        updateCart();
+    });
+
+    updateCart();
+</script>
+</body>
+</html>

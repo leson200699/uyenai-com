@@ -1,0 +1,211 @@
+/* Rich Text Editor Styles */
+
+/* TinyMCE Container styling */
+.tox-tinymce {
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* TinyMCE focused state */
+.tox-tinymce.tox-tinymce--focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* TinyMCE toolbar styling */
+.tox .tox-toolbar {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* TinyMCE button styling */
+.tox .tox-tbtn {
+    margin: 2px 1px !important;
+    border-radius: 4px !important;
+}
+
+.tox .tox-tbtn:hover {
+    background: #e5e7eb !important;
+}
+
+.tox .tox-tbtn--enabled {
+    background: #3b82f6 !important;
+    color: white !important;
+}
+
+/* TinyMCE content area */
+.tox .tox-edit-area {
+    border-radius: 0 0 8px 8px !important;
+}
+
+/* File Manager Modal styling */
+#fileManagerModal {
+    backdrop-filter: blur(4px);
+}
+
+/* Image insert button styling */
+button[data-editor-target] {
+    transition: all 0.2s ease-in-out;
+}
+
+button[data-editor-target]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Loading spinner for file manager */
+.file-manager-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Rich text editor content preview styles */
+.rich-text-content {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.rich-text-content h1,
+.rich-text-content h2,
+.rich-text-content h3,
+.rich-text-content h4,
+.rich-text-content h5,
+.rich-text-content h6 {
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #111827;
+}
+
+.rich-text-content h1 { font-size: 2em; }
+.rich-text-content h2 { font-size: 1.5em; }
+.rich-text-content h3 { font-size: 1.25em; }
+.rich-text-content h4 { font-size: 1.1em; }
+
+.rich-text-content p {
+    margin-bottom: 1em;
+}
+
+.rich-text-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin: 1em 0;
+}
+
+.rich-text-content ul,
+.rich-text-content ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+.rich-text-content li {
+    margin-bottom: 0.5em;
+}
+
+.rich-text-content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1em;
+    margin: 1em 0;
+    font-style: italic;
+    background: #f9fafb;
+    padding: 1em;
+    border-radius: 0 8px 8px 0;
+}
+
+.rich-text-content code {
+    background: #f3f4f6;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.rich-text-content pre {
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.rich-text-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.rich-text-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.rich-text-content th,
+.rich-text-content td {
+    padding: 0.75em 1em;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rich-text-content th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+
+.rich-text-content a {
+    color: #3b82f6;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+
+.rich-text-content a:hover {
+    color: #1d4ed8;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .tox-tinymce {
+        border-radius: 6px !important;
+    }
+    
+    .rich-text-content {
+        font-size: 0.9em;
+    }
+    
+    .rich-text-content h1 { font-size: 1.5em; }
+    .rich-text-content h2 { font-size: 1.25em; }
+    .rich-text-content h3 { font-size: 1.1em; }
+    
+    .rich-text-content img {
+        margin: 0.5em 0;
+    }
+    
+    .rich-text-content table {
+        font-size: 0.8em;
+    }
+    
+    .rich-text-content th,
+    .rich-text-content td {
+        padding: 0.5em 0.75em;
+    }
+}

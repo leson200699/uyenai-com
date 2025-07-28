@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Tâm Hỗ Trợ - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .plus-icon {
+            display: none;
+        }
+        details:not([open]) summary .minus-icon {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="shopping-bag" class="w-5 h-5 mr-3"></i>
+                Cửa hàng
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="package" class="w-5 h-5 mr-3"></i>
+                Kho của tôi
+            </a>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="wallet" class="w-5 h-5 mr-3"></i>
+                Nạp tiền & Thanh toán
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="history" class="w-5 h-5 mr-3"></i>
+                Lịch sử đơn hàng
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="user" class="w-5 h-5 mr-3"></i>
+                Thông tin cá nhân
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                <i data-lucide="life-buoy" class="w-5 h-5 mr-3"></i>
+                Trung tâm hỗ trợ
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Trung Tâm Hỗ Trợ</h1>
+             <div class="flex items-center gap-4">
+                <div class="relative">
+                    <button class="flex items-center gap-2">
+                        <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- FAQ Section -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Các câu hỏi thường gặp (FAQ)</h2>
+                    <div class="space-y-4">
+                        <details class="bg-white p-4 rounded-lg border shadow-sm">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">
+                                Làm thế nào để nạp tiền vào tài khoản?
+                                <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-500 plus-icon"></i>
+                                <i data-lucide="minus-circle" class="w-5 h-5 text-indigo-500 minus-icon"></i>
+                            </summary>
+                            <p class="mt-4 text-gray-600">
+                                Bạn có thể nạp tiền bằng cách chuyển khoản ngân hàng hoặc qua ví Momo. Vui lòng truy cập trang "Nạp tiền & Thanh toán", chọn phương thức và làm theo hướng dẫn. Điều quan trọng là phải ghi chính xác nội dung chuyển khoản để tiền được cộng tự động.
+                            </p>
+                        </details>
+                        <details class="bg-white p-4 rounded-lg border shadow-sm">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">
+                                Tôi đã mua khoá học, làm sao để vào học?
+                                <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-500 plus-icon"></i>
+                                <i data-lucide="minus-circle" class="w-5 h-5 text-indigo-500 minus-icon"></i>
+                            </summary>
+                            <p class="mt-4 text-gray-600">
+                                Sau khi thanh toán thành công, tất cả các sản phẩm số bạn đã mua sẽ nằm trong mục "Kho của tôi". Bạn chỉ cần vào đó, chọn tab "Khoá học" và nhấn "Vào học" ở khoá học tương ứng.
+                            </p>
+                        </details>
+                        <details class="bg-white p-4 rounded-lg border shadow-sm">
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">
+                                Chính sách bảo hành cho dịch vụ SEO là gì?
+                                <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-500 plus-icon"></i>
+                                <i data-lucide="minus-circle" class="w-5 h-5 text-indigo-500 minus-icon"></i>
+                            </summary>
+                            <p class="mt-4 text-gray-600">
+                                Chúng tôi cam kết duy trì thứ hạng từ khóa đã đạt được trong top theo hợp đồng. Chính sách bảo hành chi tiết sẽ được quy định rõ trong hợp đồng dịch vụ mà hai bên đã ký kết.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Support Form Section -->
+                <div class="bg-white rounded-xl shadow-sm border p-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Gửi Yêu Cầu Hỗ Trợ</h2>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="topic" class="block text-sm font-medium text-gray-700">Chủ đề cần hỗ trợ</label>
+                            <select id="topic" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
+                                <option>Vấn đề kỹ thuật</option>
+                                <option>Vấn đề thanh toán / nạp tiền</option>
+                                <option>Khiếu nại dịch vụ</option>
+                                <option>Góp ý</option>
+                                <option>Vấn đề khác</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="order-id" class="block text-sm font-medium text-gray-700">Mã đơn hàng (Nếu có)</label>
+                            <input type="text" id="order-id" placeholder="Ví dụ: #DH1138" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Mô tả chi tiết</p>
+                            <textarea id="message" rows="5" placeholder="Vui lòng mô tả rõ vấn đề bạn đang gặp phải..." class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2"></textarea>
+                        </div>
+                        <div>
+                            <label for="attachment" class="block text-sm font-medium text-gray-700">Đính kèm (Ảnh chụp màn hình, video...)</label>
+                            <input type="file" id="attachment" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full sm:w-auto inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Gửi Yêu Cầu
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

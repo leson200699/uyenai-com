@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tên Miền - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ & Hạ Tầng
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Tên Miền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Hosting</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Quản trị VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Email Doanh Nghiệp</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Tìm Kiếm & Đăng Ký Tên Miền</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="bg-white rounded-xl shadow-sm border p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-center text-gray-800">Tìm tên miền hoàn hảo cho bạn.</h2>
+                <div class="flex mt-6">
+                    <input id="domain-search-input" type="text" placeholder="Nhập tên miền bạn muốn đăng ký" class="flex-grow border-gray-300 rounded-l-lg focus:ring-indigo-500 focus:border-indigo-500 text-lg p-4">
+                    <button id="domain-search-btn" class="bg-indigo-600 text-white px-8 rounded-r-lg font-bold hover:bg-indigo-700 flex items-center gap-2">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                        <span>Kiểm tra</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="search-results" class="max-w-4xl mx-auto mt-6 space-y-3">
+                <!-- Search results will be injected here by JavaScript -->
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-12">
+                <h3 class="text-xl font-bold text-center mb-6">Bảng giá tên miền phổ biến</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg border">
+                        <p class="text-2xl font-bold text-indigo-600">.com</p>
+                        <p class="font-semibold">250.000đ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border">
+                        <p class="text-2xl font-bold text-indigo-600">.vn</p>
+                        <p class="font-semibold">750.000đ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border">
+                        <p class="text-2xl font-bold text-indigo-600">.net</p>
+                        <p class="font-semibold">280.000đ</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border">
+                        <p class="text-2xl font-bold text-indigo-600">.io</p>
+                        <p class="font-semibold">950.000đ</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    document.getElementById('submenu-dich-vu-toggle').click();
+
+    const searchBtn = document.getElementById('domain-search-btn');
+    const searchInput = document.getElementById('domain-search-input');
+    const resultsContainer = document.getElementById('search-results');
+
+    const tlds = [
+        { ext: '.com', price: 250000, available: true },
+        { ext: '.vn', price: 750000, available: true },
+        { ext: '.net', price: 280000, available: false },
+        { ext: '.org', price: 300000, available: true },
+        { ext: '.io', price: 950000, available: false },
+        { ext: '.ai', price: 1800000, available: true },
+    ];
+
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    }
+
+    searchBtn.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        if (!query) {
+            resultsContainer.innerHTML = '<p class="text-center text-red-500">Vui lòng nhập tên miền để kiểm tra.</p>';
+            return;
+        }
+
+        resultsContainer.innerHTML = '<p class="text-center">Đang kiểm tra...</p>';
+
+        setTimeout(() => {
+            let html = '';
+            tlds.forEach(tld => {
+                const domainName = query + tld.ext;
+                if (tld.available) {
+                    html += `
+                        <div class="bg-white border-green-200 border-2 rounded-lg p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-bold text-lg text-green-700">${domainName}</p>
+                                <p class="text-sm text-gray-600">Tên miền có sẵn!</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-lg">${formatCurrency(tld.price)}</p>
+                                <button class="mt-1 px-4 py-2 text-sm font-bold text-white bg-green-600 rounded-lg hover:bg-green-700">Đăng ký</button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                     html += `
+                        <div class="bg-gray-50 border rounded-lg p-4 flex items-center justify-between opacity-60">
+                            <div>
+                                <p class="font-bold text-lg text-gray-500 line-through">${domainName}</p>
+                                <p class="text-sm text-red-600">Đã có người đăng ký</p>
+                            </div>
+                            <div class="text-right">
+                                <button class="mt-1 px-4 py-2 text-sm font-bold text-gray-600 bg-gray-200 rounded-lg cursor-not-allowed">Không có sẵn</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            resultsContainer.innerHTML = html;
+        }, 1000);
+    });
+</script>
+</body>
+</html>

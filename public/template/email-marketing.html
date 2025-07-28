@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Email Marketing - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .pricing-card-popular {
+            border-color: #4f46e5;
+            border-width: 2px;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ & Hạ Tầng
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tên Miền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Hosting</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Quản trị VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Email Doanh Nghiệp</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Email Marketing</a>
+                </div>
+            </div>
+             <div>
+                <button id="submenu-mxh-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                    <span class="flex items-center">
+                        <i data-lucide="share-2" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ Mạng Xã Hội
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-mxh" class="hidden mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch Vụ Facebook</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Dịch Vụ Email Marketing</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Gửi Email Marketing Hiệu Quả & Chuyên Nghiệp</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Xây dựng chiến dịch, nuôi dưỡng khách hàng và tăng trưởng doanh thu với nền tảng gửi email mạnh mẽ của chúng tôi.</p>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Starter -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-center">Khởi Đầu</h3>
+                    <p class="text-sm text-center text-gray-500">Cho cá nhân, dự án nhỏ</p>
+                    <p class="text-4xl font-bold text-center my-6">250.000<span class="text-lg font-medium">đ/tháng</span></p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-indigo-500"></i>Tối đa <b>2,000</b> subscribers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="send" class="w-5 h-5 text-indigo-500"></i><b>10,000</b> email/tháng</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Trình tạo email kéo thả</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Báo cáo cơ bản</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i>Tự động hóa (Automation)</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Đăng ký</button>
+                </div>
+
+                <!-- Card 2: Growth (Popular) -->
+                <div class="bg-white border-2 rounded-xl shadow-lg p-6 flex flex-col relative pricing-card-popular">
+                    <span class="absolute top-0 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full left-1/2 -translate-x-1/2">Phổ biến</span>
+                    <h3 class="text-xl font-bold text-center">Phát Triển</h3>
+                    <p class="text-sm text-center text-gray-500">Cho doanh nghiệp đang tăng trưởng</p>
+                    <p class="text-4xl font-bold text-center my-6">790.000<span class="text-lg font-medium">đ/tháng</span></p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-indigo-500"></i>Tối đa <b>10,000</b> subscribers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="send" class="w-5 h-5 text-indigo-500"></i><b>Không giới hạn</b> email</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Trình tạo email kéo thả</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Báo cáo nâng cao</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Tự động hóa (Automation)</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Đăng ký</button>
+                </div>
+
+                <!-- Card 3: Business -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-center">Doanh Nghiệp</h3>
+                    <p class="text-sm text-center text-gray-500">Giải pháp toàn diện, nhiều tính năng</p>
+                    <p class="text-4xl font-bold text-center my-6">1.890.000<span class="text-lg font-medium">đ/tháng</span></p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-indigo-500"></i>Tối đa <b>25,000</b> subscribers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="send" class="w-5 h-5 text-indigo-500"></i><b>Không giới hạn</b> email</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Trình tạo email kéo thả</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Báo cáo nâng cao</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Tự động hóa (Automation)</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Đăng ký</button>
+                </div>
+
+                <!-- Card 4: Enterprise -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-center">Tuỳ Chỉnh</h3>
+                    <p class="text-sm text-center text-gray-500">Cho nhu cầu gửi email số lượng cực lớn</p>
+                    <p class="text-4xl font-bold text-center my-6">Liên Hệ</p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-indigo-500"></i><b>Không giới hạn</b> subscribers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="send" class="w-5 h-5 text-indigo-500"></i><b>Không giới hạn</b> email</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Hạ tầng gửi riêng</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Hỗ trợ chuyên biệt</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Tích hợp API</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Liên hệ</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    setupSubmenuToggle('submenu-mxh-toggle', 'submenu-mxh');
+    document.getElementById('submenu-dich-vu-toggle').click();
+</script>
+</body>
+</html>

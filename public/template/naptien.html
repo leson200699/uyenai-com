@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nạp Tiền & Lịch Sử Giao Dịch - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="hidden mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tên Miền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Hosting / VPS</a>
+                </div>
+            </div>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                <i data-lucide="wallet" class="w-5 h-5 mr-3"></i>
+                Nạp tiền & Thanh toán
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="user" class="w-5 h-5 mr-3"></i>
+                Thông tin cá nhân
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Nạp Tiền & Lịch Sử Giao Dịch</h1>
+             <div class="flex items-center gap-4">
+                <div class="text-right">
+                    <p class="text-xs text-gray-500">Số dư</p>
+                    <p class="font-bold text-indigo-600">1.250.000đ</p>
+                </div>
+                <div class="relative">
+                    <button class="flex items-center gap-2">
+                        <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-6">
+            <!-- Deposit Section -->
+            <div class="bg-white rounded-xl shadow-sm border p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Nạp tiền vào tài khoản</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Bank Transfer -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Chuyển khoản Ngân hàng</h3>
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/150x150/ffffff/000000?text=VietQR" alt="QR Code Ngân hàng" class="rounded-lg border">
+                            <div class="space-y-1 text-sm">
+                                <p>Ngân hàng: <b>MB Bank</b></p>
+                                <p>Chủ tài khoản: <b>CONG TY TECHHUB</b></p>
+                                <p>Số tài khoản: <b>0123456789</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Momo -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Ví điện tử Momo</h3>
+                         <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/150x150/ffffff/d82d8b?text=Momo+QR" alt="QR Code Momo" class="rounded-lg border">
+                            <div class="space-y-1 text-sm">
+                                <p>Ví Momo: <b>CONG TY TECHHUB</b></p>
+                                <p>Số điện thoại: <b>0987654321</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Important Note -->
+                <div class="mt-6 bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                    <h4 class="font-bold text-indigo-800">QUAN TRỌNG: Nội dung chuyển khoản</h4>
+                    <p class="text-indigo-700 mt-1">Để được cộng tiền tự động, vui lòng ghi chính xác nội dung sau:</p>
+                    <div class="mt-2 bg-white p-3 rounded-lg flex items-center justify-between">
+                        <code id="transfer-memo" class="font-mono text-lg text-indigo-900 font-bold">NAPTIEN 12345</code>
+                        <button id="copy-btn" class="flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-800">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <span>Sao chép</span>
+                        </button>
+                    </div>
+                     <p class="text-xs text-indigo-700 mt-2">(Trong đó <b>12345</b> là ID tài khoản của bạn)</p>
+                </div>
+            </div>
+
+            <!-- Transaction History -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Lịch sử giao dịch</h2>
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-500 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Mã GD</th>
+                                    <th scope="col" class="px-6 py-3">Thời gian</th>
+                                    <th scope="col" class="px-6 py-3">Nội dung</th>
+                                    <th scope="col" class="px-6 py-3">Số tiền</th>
+                                    <th scope="col" class="px-6 py-3">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#TXN98765</td>
+                                    <td class="px-6 py-4">12/07/2025 10:30</td>
+                                    <td class="px-6 py-4">Nạp tiền vào tài khoản</td>
+                                    <td class="px-6 py-4 font-semibold text-green-600">+2.000.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Thành công</span></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#TXN98764</td>
+                                    <td class="px-6 py-4">11/07/2025 15:00</td>
+                                    <td class="px-6 py-4">Thanh toán dịch vụ SEO Tổng Thể</td>
+                                    <td class="px-6 py-4 font-semibold text-red-600">-15.000.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Thành công</span></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#TXN98763</td>
+                                    <td class="px-6 py-4">10/07/2025 09:15</td>
+                                    <td class="px-6 py-4">Mua tài khoản ChatGPT Plus</td>
+                                    <td class="px-6 py-4 font-semibold text-red-600">-499.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Thành công</span></td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#TXN98762</td>
+                                    <td class="px-6 py-4">09/07/2025 11:45</td>
+                                    <td class="px-6 py-4">Nạp tiền vào tài khoản</td>
+                                    <td class="px-6 py-4 font-semibold text-green-600">+20.000.000đ</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded-full">Đang xử lý</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+
+    // Copy to clipboard
+    const copyBtn = document.getElementById('copy-btn');
+    const memoText = document.getElementById('transfer-memo').textContent;
+    copyBtn.addEventListener('click', () => {
+        const textarea = document.createElement('textarea');
+        textarea.value = memoText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = `
+            <i data-lucide="check" class="w-4 h-4 text-green-500"></i>
+            <span>Đã chép!</span>
+        `;
+        lucide.createIcons();
+        
+        setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            lucide.createIcons();
+        }, 2000);
+    });
+</script>
+</body>
+</html>

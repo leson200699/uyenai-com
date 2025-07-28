@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Tài Liệu - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <!-- Logo -->
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 p-4 space-y-1">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            
+            <!-- Menu Mua Tài Khoản with Submenu -->
+            <div>
+                <button id="submenu-tai-khoan-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="key-round" class="w-5 h-5 mr-3"></i>
+                        Mua Tài Khoản
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-tai-khoan" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tài khoản AI</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tài khoản Facebook</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Kho tài liệu</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Khoá học</a>
+                </div>
+            </div>
+
+            <!-- Menu Mua Dịch Vụ with Submenu -->
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Đặt Hàng Dịch Vụ
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="hidden mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch vụ SEO</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Thiết kế Website</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Chạy Quảng cáo</a>
+                </div>
+            </div>
+
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="history" class="w-5 h-5 mr-3"></i>
+                Lịch sử đơn hàng
+            </a>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="wallet" class="w-5 h-5 mr-3"></i>
+                Nạp tiền
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="life-buoy" class="w-5 h-5 mr-3"></i>
+                Hỗ trợ
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <!-- Header -->
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <button class="md:hidden p-2 rounded-md text-gray-500 hover:bg-gray-100">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            <div class="hidden md:flex relative">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                <input type="text" placeholder="Tìm kiếm tài liệu..." class="w-full max-w-xs pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm font-semibold text-indigo-600">Số dư: 1,250,000đ</span>
+                <button class="relative p-2 text-gray-500 rounded-full hover:bg-gray-100 hover:text-gray-900">
+                    <i data-lucide="bell" class="w-6 h-6"></i>
+                </button>
+                <div class="relative">
+                    <button class="flex items-center gap-2">
+                        <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                        <span class="hidden lg:block text-sm font-medium">Khách Hàng</span>
+                        <i data-lucide="chevron-down" class="hidden lg:block w-4 h-4 text-gray-500"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold text-gray-900">Kho Tài Liệu</h1>
+                <p class="text-gray-600 mt-1">Truy cập kho tàng kiến thức, biểu mẫu và tài nguyên độc quyền.</p>
+            </div>
+            
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-full">Tất cả</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 bg-white border rounded-full hover:bg-gray-50">Marketing</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 bg-white border rounded-full hover:bg-gray-50">Kinh doanh</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 bg-white border rounded-full hover:bg-gray-50">Thiết kế</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 bg-white border rounded-full hover:bg-gray-50">Phát triển bản thân</button>
+            </div>
+
+            <!-- Documents List -->
+            <div class="space-y-4">
+                <!-- Document Item 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 bg-red-100 text-red-600 flex items-center justify-center rounded-lg">
+                        <i data-lucide="file-type-2" class="w-8 h-8"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-gray-800">Bộ 500+ Mẫu Content Marketing Đa Ngành</h4>
+                        <p class="text-sm text-gray-600 mt-1">Tiết kiệm thời gian, bùng nổ ý tưởng với bộ sưu tập mẫu content cho Facebook, Blog, Email...</p>
+                    </div>
+                    <div class="flex-shrink-0 text-center sm:text-right w-full sm:w-auto">
+                        <p class="text-lg font-bold text-indigo-600">99.000đ</p>
+                        <button class="mt-1 w-full sm:w-auto px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">Mua ngay</button>
+                    </div>
+                </div>
+                 <!-- Document Item 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-100 text-blue-600 flex items-center justify-center rounded-lg">
+                        <i data-lucide="file-spreadsheet" class="w-8 h-8"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-gray-800">Template Lập Kế Hoạch Kinh Doanh (Excel)</h4>
+                        <p class="text-sm text-gray-600 mt-1">Biểu mẫu chi tiết giúp bạn xây dựng một kế hoạch kinh doanh hoàn chỉnh từ A-Z.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-center sm:text-right w-full sm:w-auto">
+                        <p class="text-lg font-bold text-green-600">Miễn phí</p>
+                        <button class="mt-1 w-full sm:w-auto px-4 py-2 text-sm font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700">Tải xuống</button>
+                    </div>
+                </div>
+                 <!-- Document Item 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 bg-yellow-100 text-yellow-600 flex items-center justify-center rounded-lg">
+                        <i data-lucide="file-image" class="w-8 h-8"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-gray-800">Tuyển Tập 100+ Font Chữ Việt Hóa Đẹp</h4>
+                        <p class="text-sm text-gray-600 mt-1">Bộ font chữ đa dạng, đã được Việt hóa, phù hợp cho mọi nhu cầu thiết kế.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-center sm:text-right w-full sm:w-auto">
+                        <p class="text-lg font-bold text-indigo-600">49.000đ</p>
+                        <button class="mt-1 w-full sm:w-auto px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    // Script to initialize Lucide icons
+    lucide.createIcons();
+
+    // Submenu toggle logic
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+
+    setupSubmenuToggle('submenu-tai-khoan-toggle', 'submenu-tai-khoan');
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    
+    // By default, open the account submenu for this page
+    document.getElementById('submenu-tai-khoan-toggle').click();
+
+</script>
+</body>
+</html>

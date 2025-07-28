@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking KOL/KOC - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-mxh-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="share-2" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ Mạng Xã Hội
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-mxh" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch Vụ Facebook</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch Vụ Zalo</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch Vụ TikTok</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Booking KOL/KOC</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Booking KOL/KOC</h1>
+        </header>
+
+        <main class="p-6">
+            <!-- Filters -->
+            <div class="mb-6 flex flex-col sm:flex-row gap-4">
+                <div class="relative flex-grow">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                    <input type="text" placeholder="Tìm theo tên hoặc ID..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <select class="border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                    <option>Tất cả lĩnh vực</option>
+                    <option>Ẩm thực</option>
+                    <option>Làm đẹp</option>
+                    <option>Thời trang</option>
+                    <option>Công nghệ</option>
+                </select>
+                <select class="border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                    <option>Mọi mức giá</option>
+                    <option>Dưới 5 triệu</option>
+                    <option>5 - 20 triệu</option>
+                    <option>Trên 20 triệu</option>
+                </select>
+            </div>
+
+            <!-- KOL/KOC Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Profile Card 1 -->
+                <div class="bg-white rounded-xl shadow-sm border overflow-hidden flex flex-col">
+                    <div class="h-32 bg-gradient-to-r from-purple-400 to-indigo-500"></div>
+                    <div class="p-4 flex flex-col items-center flex-grow -mt-16">
+                        <img src="https://placehold.co/100x100/ffffff/4338ca?text=Linh" class="w-24 h-24 rounded-full border-4 border-white shadow-md">
+                        <h3 class="font-bold text-lg mt-2">Linh Barbie</h3>
+                        <span class="text-sm bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full mt-1">Làm đẹp</span>
+                        <div class="w-full flex justify-around text-center my-4">
+                            <div>
+                                <p class="font-bold text-lg">18.5M</p>
+                                <p class="text-xs text-gray-500">Followers</p>
+                            </div>
+                             <div>
+                                <p class="font-bold text-lg">4.2%</p>
+                                <p class="text-xs text-gray-500">Tương tác</p>
+                            </div>
+                        </div>
+                        <button class="w-full mt-auto bg-indigo-600 text-white font-bold py-2 rounded-lg hover:bg-indigo-700">Gửi Yêu Cầu</button>
+                    </div>
+                </div>
+                <!-- Profile Card 2 -->
+                <div class="bg-white rounded-xl shadow-sm border overflow-hidden flex flex-col">
+                    <div class="h-32 bg-gradient-to-r from-green-400 to-blue-500"></div>
+                    <div class="p-4 flex flex-col items-center flex-grow -mt-16">
+                        <img src="https://placehold.co/100x100/ffffff/16a34a?text=Ninh" class="w-24 h-24 rounded-full border-4 border-white shadow-md">
+                        <h3 class="font-bold text-lg mt-2">Ninh Tito</h3>
+                        <span class="text-sm bg-green-100 text-green-700 px-2 py-0.5 rounded-full mt-1">Ẩm thực</span>
+                        <div class="w-full flex justify-around text-center my-4">
+                            <div>
+                                <p class="font-bold text-lg">850K</p>
+                                <p class="text-xs text-gray-500">Followers</p>
+                            </div>
+                             <div>
+                                <p class="font-bold text-lg">5.1%</p>
+                                <p class="text-xs text-gray-500">Tương tác</p>
+                            </div>
+                        </div>
+                        <button class="w-full mt-auto bg-indigo-600 text-white font-bold py-2 rounded-lg hover:bg-indigo-700">Gửi Yêu Cầu</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-mxh-toggle', 'submenu-mxh');
+    document.getElementById('submenu-mxh-toggle').click();
+</script>
+</body>
+</html>

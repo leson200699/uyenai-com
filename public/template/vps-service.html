@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Quản Trị VPS - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .pricing-card-popular {
+            border-color: #4f46e5;
+            border-width: 2px;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ & Hạ Tầng
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tên Miền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Hosting</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Quản trị VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Email Doanh Nghiệp</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Dịch Vụ Quản Trị VPS</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Yên tâm phát triển, kỹ thuật để chúng tôi lo</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Dịch vụ quản trị máy chủ ảo (VPS) chuyên nghiệp giúp bạn tiết kiệm thời gian, chi phí và đảm bảo hệ thống luôn hoạt động ổn định, bảo mật.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-center">Cơ Bản</h3>
+                    <p class="text-4xl font-bold text-center my-6">500.000<span class="text-lg font-medium">đ/tháng</span></p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Cài đặt & Cấu hình ban đầu</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Theo dõi & Giám sát 24/7</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Cảnh báo khi có sự cố</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i>Cập nhật & Bảo mật định kỳ</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i>Sao lưu hàng tuần</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Hỗ trợ kỹ thuật cơ bản</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Liên hệ</button>
+                </div>
+
+                <!-- Card 2 (Popular) -->
+                <div class="bg-white border-2 rounded-xl shadow-lg p-6 flex flex-col relative pricing-card-popular">
+                    <span class="absolute top-0 -translate-y-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full left-1/2 -translate-x-1/2">Toàn Diện</span>
+                    <h3 class="text-xl font-bold text-center">Chuyên Nghiệp</h3>
+                    <p class="text-4xl font-bold text-center my-6">1.500.000<span class="text-lg font-medium">đ/tháng</span></p>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Cài đặt & Cấu hình ban đầu</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Theo dõi & Giám sát 24/7</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Cảnh báo khi có sự cố</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Cập nhật & Bảo mật định kỳ</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Sao lưu hàng tuần</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i>Hỗ trợ kỹ thuật chuyên sâu</li>
+                    </ul>
+                    <button class="mt-8 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Liên hệ</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-center">Theo Yêu Cầu</h3>
+                    <p class="text-4xl font-bold text-center my-6">Liên Hệ</p>
+                    <p class="text-sm text-center text-gray-600 flex-grow">Chúng tôi sẽ xây dựng gói dịch vụ quản trị riêng, phù hợp với nhu cầu và hạ tầng đặc thù của doanh nghiệp bạn.</p>
+                    <button class="mt-8 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Gửi Yêu Cầu</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    document.getElementById('submenu-dich-vu-toggle').click();
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Phát Triển Mobile App - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .step-line {
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            bottom: -1rem;
+            border-left-width: 2px;
+            border-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dev-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="code-2" class="w-5 h-5 mr-3"></i>
+                        Phát Triển Phần Mềm
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dev" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Mobile App</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Zalo Mini App</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Website & Web App</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Dịch Vụ Phát Triển Mobile App</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="max-w-7xl mx-auto">
+                <!-- Hero Section -->
+                <div class="bg-white rounded-xl p-8 md:p-12 border shadow-sm flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <span class="text-sm font-bold text-indigo-600">GIẢI PHÁP TOÀN DIỆN</span>
+                        <h2 class="text-4xl font-extrabold text-gray-900 mt-2">Biến Ý Tưởng Thành Ứng Dụng Di Động</h2>
+                        <p class="mt-4 text-lg text-gray-600">Chúng tôi cung cấp dịch vụ phát triển ứng dụng di động trọn gói trên cả hai nền tảng iOS và Android, từ khâu tư vấn, thiết kế UI/UX đến lập trình và phát hành lên các kho ứng dụng.</p>
+                        <a href="#contact" class="mt-8 inline-block bg-indigo-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors">
+                            Liên Hệ Tư Vấn
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/500x400/e0e7ff/4338ca?text=Mobile+App" class="rounded-lg" alt="Mobile App Development">
+                    </div>
+                </div>
+
+                <!-- Platforms Section -->
+                <div class="my-16 text-center">
+                    <h3 class="text-3xl font-bold text-center mb-10">Phát triển trên các nền tảng hàng đầu</h3>
+                    <div class="inline-flex items-center gap-12">
+                        <div class="flex flex-col items-center gap-3">
+                            <img src="https://placehold.co/80x80/f3f4f6/000000?text=iOS" class="w-20 h-20" alt="Apple iOS">
+                            <p class="font-semibold">Apple iOS</p>
+                        </div>
+                        <div class="flex flex-col items-center gap-3">
+                            <img src="https://placehold.co/80x80/f3f4f6/3ddc84?text=Android" class="w-20 h-20" alt="Google Android">
+                            <p class="font-semibold">Google Android</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process Section -->
+                <div class="my-16">
+                    <h3 class="text-3xl font-bold text-center mb-10">Quy Trình Phát Triển Minh Bạch</h3>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="space-y-8">
+                            <!-- Step 1 -->
+                            <div class="flex relative">
+                                <div class="step-line"></div>
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10">1</div>
+                                <div class="ml-6">
+                                    <h4 class="font-bold text-lg">Tư Vấn & Phân Tích</h4>
+                                    <p class="text-gray-600">Lắng nghe ý tưởng, phân tích yêu cầu và tư vấn giải pháp công nghệ, tính năng phù hợp nhất.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="flex relative">
+                                <div class="step-line"></div>
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10">2</div>
+                                <div class="ml-6">
+                                    <h4 class="font-bold text-lg">Thiết Kế UI/UX</h4>
+                                    <p class="text-gray-600">Xây dựng wireframe, prototype và thiết kế giao diện người dùng (UI) tối ưu, thân thiện và đẹp mắt.</p>
+                                </div>
+                            </div>
+                             <!-- Step 3 -->
+                            <div class="flex relative">
+                                <div class="step-line"></div>
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10">3</div>
+                                <div class="ml-6">
+                                    <h4 class="font-bold text-lg">Lập Trình & Phát Triển</h4>
+                                    <p class="text-gray-600">Đội ngũ lập trình viên tiến hành phát triển ứng dụng (Front-end, Back-end, API) theo thiết kế.</p>
+                                </div>
+                            </div>
+                             <!-- Step 4 -->
+                            <div class="flex relative">
+                                <div class="step-line"></div>
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10">4</div>
+                                <div class="ml-6">
+                                    <h4 class="font-bold text-lg">Kiểm Thử (Testing)</h4>
+                                    <p class="text-gray-600">Kiểm tra và đảm bảo mọi tính năng hoạt động ổn định, không có lỗi trước khi ra mắt.</p>
+                                </div>
+                            </div>
+                            <!-- Step 5 -->
+                            <div class="flex relative">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10">5</div>
+                                <div class="ml-6">
+                                    <h4 class="font-bold text-lg">Phát Hành & Bảo Trì</h4>
+                                    <p class="text-gray-600">Hỗ trợ đưa ứng dụng lên Apple App Store và Google Play Store, đồng thời cung cấp các gói bảo trì, nâng cấp sau dự án.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="my-16 text-center" id="contact">
+                    <h3 class="text-3xl font-bold">Sẵn sàng để bắt đầu dự án của bạn?</h3>
+                    <p class="text-gray-600 mt-2">Hãy để lại thông tin, đội ngũ chuyên gia của chúng tôi sẽ liên hệ với bạn ngay.</p>
+                    <a href="#" class="mt-6 inline-block bg-indigo-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors">
+                        Yêu Cầu Báo Giá
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dev-toggle', 'submenu-dev');
+    document.getElementById('submenu-dev-toggle').click();
+</script>
+</body>
+</html>

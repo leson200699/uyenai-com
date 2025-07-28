@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiến Thức & Hướng Dẫn - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter gray */
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .category-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            
+            <div>
+                <button id="submenu-content-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="book-open" class="w-5 h-5 mr-3"></i>
+                        Nội dung & Kiến thức
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-content" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Blog & Tin tức</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Kiến thức & Hướng dẫn</a>
+                </div>
+            </div>
+
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="life-buoy" class="w-5 h-5 mr-3"></i>
+                Trung tâm hỗ trợ
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="user" class="w-5 h-5 mr-3"></i>
+                Thông tin cá nhân
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <!-- Header Section -->
+        <div class="bg-white">
+            <header class="flex items-center justify-between h-16 px-6 border-b">
+                <h1 class="text-xl font-bold text-gray-900">Kiến Thức & Hướng Dẫn</h1>
+                 <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <button class="flex items-center gap-2">
+                            <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- Search Hero -->
+            <div class="p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800">Chúng tôi có thể giúp gì cho bạn?</h2>
+                <div class="mt-6 max-w-2xl mx-auto">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400"></i>
+                        <input type="text" placeholder="Tìm kiếm hướng dẫn (ví dụ: trỏ tên miền, cài đặt SSL...)" class="w-full pl-14 pr-4 py-4 text-lg border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="p-6">
+            <div class="max-w-7xl mx-auto">
+                <!-- Categories Section -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Duyệt theo danh mục</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-indigo-100 text-indigo-600 p-3 rounded-lg">
+                                <i data-lucide="server" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Hosting & VPS</h4>
+                                <p class="text-sm text-gray-600 mt-1">Hướng dẫn quản lý, cài đặt và tối ưu hosting, máy chủ ảo.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-green-100 text-green-600 p-3 rounded-lg">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Bảo Mật</h4>
+                                <p class="text-sm text-gray-600 mt-1">Các hướng dẫn tăng cường bảo mật cho website và tài khoản.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-lg">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Tên Miền & DNS</h4>
+                                <p class="text-sm text-gray-600 mt-1">Quản lý, trỏ tên miền và cấu hình các bản ghi DNS.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-orange-100 text-orange-600 p-3 rounded-lg">
+                                <i data-lucide="trending-up" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">SEO Kỹ Thuật</h4>
+                                <p class="text-sm text-gray-600 mt-1">Các thủ thuật và hướng dẫn tối ưu kỹ thuật cho SEO.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-purple-100 text-purple-600 p-3 rounded-lg">
+                                <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Công Cụ AI</h4>
+                                <p class="text-sm text-gray-600 mt-1">Mẹo và hướng dẫn sử dụng các công cụ AI hiệu quả.</p>
+                            </div>
+                        </a>
+                         <a href="#" class="bg-white p-6 rounded-xl border flex items-start gap-4 category-card">
+                            <div class="bg-red-100 text-red-600 p-3 rounded-lg">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email Doanh Nghiệp</h4>
+                                <p class="text-sm text-gray-600 mt-1">Cài đặt và sử dụng email theo tên miền riêng.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Popular Articles -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Các bài viết phổ biến</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block bg-white p-4 rounded-lg border hover:border-indigo-500 hover:bg-indigo-50 transition-colors">
+                            <p class="font-semibold text-gray-800">Hướng dẫn trỏ tên miền từ GoDaddy về Hosting tại TechHub</p>
+                        </a>
+                        <a href="#" class="block bg-white p-4 rounded-lg border hover:border-indigo-500 hover:bg-indigo-50 transition-colors">
+                            <p class="font-semibold text-gray-800">Làm thế nào để cài đặt chứng chỉ SSL miễn phí cho website?</p>
+                        </a>
+                        <a href="#" class="block bg-white p-4 rounded-lg border hover:border-indigo-500 hover:bg-indigo-50 transition-colors">
+                            <p class="font-semibold text-gray-800">5 cách tăng tốc độ website WordPress hiệu quả nhất</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-content-toggle', 'submenu-content');
+    document.getElementById('submenu-content-toggle').click();
+</script>
+</body>
+</html>

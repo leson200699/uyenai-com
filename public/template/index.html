@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <!-- Logo -->
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Dashboard
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="shopping-cart" class="w-5 h-5 mr-3"></i>
+                Quản lý Đơn hàng
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="package" class="w-5 h-5 mr-3"></i>
+                Quản lý Sản phẩm
+            </a>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="book-copy" class="w-5 h-5 mr-3"></i>
+                Quản lý Dịch vụ
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+                Khách hàng
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="bar-chart-3" class="w-5 h-5 mr-3"></i>
+                Báo cáo
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="settings" class="w-5 h-5 mr-3"></i>
+                Cài đặt
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <!-- Header -->
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b">
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 rounded-md text-gray-500 hover:bg-gray-100">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            
+            <!-- Search Bar -->
+            <div class="hidden md:flex relative">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                <input type="text" placeholder="Tìm kiếm đơn hàng, sản phẩm..." class="w-full max-w-xs pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+
+            <!-- User Menu -->
+            <div class="flex items-center gap-4">
+                <button class="relative p-2 text-gray-500 rounded-full hover:bg-gray-100 hover:text-gray-900">
+                    <i data-lucide="bell" class="w-6 h-6"></i>
+                    <span class="absolute top-1 right-1 block w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <div class="relative">
+                    <button class="flex items-center gap-2">
+                        <img src="https://placehold.co/32x32/e0e7ff/4338ca?text=A" alt="Avatar" class="w-8 h-8 rounded-full">
+                        <span class="hidden lg:block text-sm font-medium">Admin</span>
+                        <i data-lucide="chevron-down" class="hidden lg:block w-4 h-4 text-gray-500"></i>
+                    </button>
+                    <!-- Dropdown (hidden by default) -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="p-6">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6">Chào mừng trở lại, Admin!</h1>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Tổng Doanh Thu</p>
+                            <p class="text-3xl font-bold text-gray-900">125.6M đ</p>
+                        </div>
+                        <div class="p-3 bg-indigo-100 rounded-full">
+                            <i data-lucide="dollar-sign" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm text-green-600 flex items-center">
+                        <i data-lucide="arrow-up" class="w-4 h-4 mr-1"></i>
+                        12.5% so với tháng trước
+                    </p>
+                </div>
+                <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Đơn Hàng Mới</p>
+                            <p class="text-3xl font-bold text-gray-900">352</p>
+                        </div>
+                        <div class="p-3 bg-blue-100 rounded-full">
+                            <i data-lucide="shopping-bag" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                    </div>
+                     <p class="mt-2 text-sm text-green-600 flex items-center">
+                        <i data-lucide="arrow-up" class="w-4 h-4 mr-1"></i>
+                        8.2% so với tháng trước
+                    </p>
+                </div>
+                <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Tổng Khách Hàng</p>
+                            <p class="text-3xl font-bold text-gray-900">1,280</p>
+                        </div>
+                        <div class="p-3 bg-green-100 rounded-full">
+                            <i data-lucide="users" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                    </div>
+                     <p class="mt-2 text-sm text-red-600 flex items-center">
+                        <i data-lucide="arrow-down" class="w-4 h-4 mr-1"></i>
+                        -1.4% so với tháng trước
+                    </p>
+                </div>
+                <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500">Sản Phẩm Đã Bán</p>
+                            <p class="text-3xl font-bold text-gray-900">869</p>
+                        </div>
+                        <div class="p-3 bg-orange-100 rounded-full">
+                            <i data-lucide="package-check" class="w-6 h-6 text-orange-600"></i>
+                        </div>
+                    </div>
+                     <p class="mt-2 text-sm text-gray-500 flex items-center">
+                        <i data-lucide="minus" class="w-4 h-4 mr-1"></i>
+                        Không thay đổi
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Recent Orders Table -->
+                <div class="lg:col-span-2 bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="p-4 border-b">
+                        <h3 class="text-lg font-semibold">Đơn Hàng Gần Đây</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-500 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Mã ĐH</th>
+                                    <th scope="col" class="px-6 py-3">Khách hàng</th>
+                                    <th scope="col" class="px-6 py-3">Ngày</th>
+                                    <th scope="col" class="px-6 py-3">Trạng thái</th>
+                                    <th scope="col" class="px-6 py-3">Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#85321</td>
+                                    <td class="px-6 py-4">Nguyễn Văn A</td>
+                                    <td class="px-6 py-4">12/07/2025</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Hoàn thành</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">499.000đ</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#85320</td>
+                                    <td class="px-6 py-4">Trần Thị B</td>
+                                    <td class="px-6 py-4">12/07/2025</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded-full">Đang xử lý</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">99.000đ</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#85319</td>
+                                    <td class="px-6 py-4">Lê Văn C</td>
+                                    <td class="px-6 py-4">11/07/2025</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-medium text-red-800 bg-red-100 rounded-full">Đã hủy</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">299.000đ</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">#85318</td>
+                                    <td class="px-6 py-4">Phạm Thị D</td>
+                                    <td class="px-6 py-4">11/07/2025</td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">Hoàn thành</span>
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">1.500.000đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Sales Chart -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                    <div class="p-4 border-b">
+                        <h3 class="text-lg font-semibold">Tổng quan Doanh thu</h3>
+                    </div>
+                    <div class="p-4">
+                        <!-- Placeholder for chart library -->
+                        <div class="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <p class="text-gray-500">Biểu đồ sẽ được hiển thị ở đây</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    // Script to initialize Lucide icons
+    lucide.createIcons();
+</script>
+</body>
+</html>

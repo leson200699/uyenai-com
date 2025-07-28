@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Online - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+        .lesson-active {
+            background-color: #eef2ff;
+            color: #4338ca;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <!-- Logo -->
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <!-- Navigation -->
+        <nav class="flex-1 p-4 space-y-1">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-tai-khoan-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="key-round" class="w-5 h-5 mr-3"></i>
+                        Mua Tài Khoản
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-tai-khoan" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tài khoản AI</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tài khoản Facebook</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Kho tài liệu</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Khoá học</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Kho sách nói</a>
+                </div>
+            </div>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Đặt Hàng Dịch Vụ
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="hidden mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Dịch vụ SEO</a>
+                </div>
+            </div>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="history" class="w-5 h-5 mr-3"></i>
+                Lịch sử đơn hàng
+            </a>
+             <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="wallet" class="w-5 h-5 mr-3"></i>
+                Nạp tiền
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="life-buoy" class="w-5 h-5 mr-3"></i>
+                Hỗ trợ
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 h-screen">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-20 flex-shrink-0">
+             <h2 class="text-lg font-semibold text-gray-800">Ứng dụng AI vào Marketing và Sáng tạo nội dung</h2>
+             <div class="flex items-center gap-4">
+                <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 bg-white border rounded-lg hover:bg-gray-50">
+                    <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-current"></i>
+                    <span>Đánh giá</span>
+                </button>
+                <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <span>Quay lại</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Video Player & Content -->
+            <main class="flex-1 p-6 overflow-y-auto">
+                <div class="aspect-video bg-black rounded-xl mb-4 flex items-center justify-center">
+                    <p class="text-white">Video Player Placeholder</p>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-900">Bài 1: Giới thiệu về AI và tiềm năng trong Marketing</h1>
+                <p class="text-gray-600 mt-2">Giảng viên: Nguyễn An</p>
+                
+                <div class="mt-6 border-t">
+                    <p class="mt-6 text-gray-700 leading-relaxed">
+                        Chào mừng bạn đến với khoá học "Ứng dụng AI vào Marketing và Sáng tạo nội dung". Trong bài học đầu tiên này, chúng ta sẽ cùng nhau tìm hiểu những khái niệm cơ bản nhất về Trí tuệ nhân tạo (AI), lịch sử phát triển và quan trọng hơn cả là những tiềm năng to lớn mà AI có thể mang lại cho lĩnh vực Marketing. Chúng ta sẽ khám phá cách AI đang thay đổi cách chúng ta tiếp cận khách hàng, cá nhân hóa trải nghiệm và tối ưu hóa chiến dịch.
+                    </p>
+                </div>
+            </main>
+
+            <!-- Lessons Playlist -->
+            <aside class="w-80 bg-white border-l overflow-y-auto flex-shrink-0">
+                <div class="p-4 border-b">
+                    <h3 class="font-semibold">Nội dung khoá học</h3>
+                    <div class="mt-2 w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1">Hoàn thành 45%</p>
+                </div>
+                <div class="divide-y">
+                    <!-- Chapter 1 -->
+                    <div class="p-4">
+                        <h4 class="font-semibold text-sm">Chương 1: Nhập môn AI Marketing</h4>
+                        <ul class="mt-2 space-y-1">
+                            <li>
+                                <a href="#" class="flex items-start gap-3 p-3 rounded-lg lesson-active">
+                                    <i data-lucide="play-circle" class="w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                                    <span class="flex-grow text-sm">Bài 1: Giới thiệu về AI và tiềm năng</span>
+                                    <span class="text-xs text-gray-500 flex-shrink-0">10:32</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-100">
+                                    <i data-lucide="circle" class="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-400"></i>
+                                    <span class="flex-grow text-sm">Bài 2: Các công cụ AI phổ biến nhất hiện nay</span>
+                                    <span class="text-xs text-gray-500 flex-shrink-0">15:10</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                     <!-- Chapter 2 -->
+                    <div class="p-4">
+                        <h4 class="font-semibold text-sm">Chương 2: Sáng tạo nội dung với AI</h4>
+                        <ul class="mt-2 space-y-1">
+                            <li>
+                                <a href="#" class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-100">
+                                    <i data-lucide="lock" class="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-400"></i>
+                                    <span class="flex-grow text-sm">Bài 3: Viết bài bán hàng với ChatGPT</span>
+                                    <span class="text-xs text-gray-500 flex-shrink-0">22:05</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#" class="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-100">
+                                    <i data-lucide="lock" class="w-5 h-5 mt-0.5 flex-shrink-0 text-gray-400"></i>
+                                    <span class="flex-grow text-sm">Bài 4: Tạo ảnh quảng cáo với Midjourney</span>
+                                    <span class="text-xs text-gray-500 flex-shrink-0">18:45</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-tai-khoan-toggle', 'submenu-tai-khoan');
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    document.getElementById('submenu-tai-khoan-toggle').click();
+</script>
+</body>
+</html>

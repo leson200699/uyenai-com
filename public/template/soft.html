@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần Mềm Quản Lý Doanh Nghiệp - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-software-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="app-window" class="w-5 h-5 mr-3"></i>
+                        Phần Mềm & Giải Pháp
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-software" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Phần Mềm Quản Lý</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Phát triển Mobile App</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Phát triển Zalo Mini App</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Phần Mềm Quản Lý Doanh Nghiệp</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Tối Ưu Vận Hành, Tăng Trưởng Bền Vững</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Các giải pháp phần mềm quản lý toàn diện giúp bạn số hóa quy trình, quản lý tài chính, nhân sự và khách hàng tập trung trên một nền tảng duy nhất.</p>
+            </div>
+
+            <!-- Software Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Perfex CRM -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <div class="flex-shrink-0 flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/64x64/e0f2fe/0891b2?text=P" class="w-16 h-16 rounded-lg" alt="Perfex CRM Logo">
+                        <div>
+                            <h3 class="text-2xl font-bold">Perfex CRM</h3>
+                            <p class="text-sm text-gray-500">Giải pháp CRM & Quản lý dự án</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 flex-grow">Một trong những hệ thống quản lý quan hệ khách hàng (CRM) và dự án mạnh mẽ nhất, phù hợp cho các agency, freelancer và doanh nghiệp vừa và nhỏ.</p>
+                    <div class="my-4 border-t pt-4">
+                        <p class="font-semibold mb-2">Tính năng chính:</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Quản lý khách hàng & Hợp đồng</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Quản lý dự án & Công việc</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Tạo hoá đơn & Báo giá</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Hệ thống Ticket hỗ trợ</li>
+                        </ul>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Xem Chi Tiết & Mua</button>
+                </div>
+
+                <!-- Card 2: Worksuite -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <div class="flex-shrink-0 flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/64x64/fefce8/a16207?text=W" class="w-16 h-16 rounded-lg" alt="Worksuite Logo">
+                        <div>
+                            <h3 class="text-2xl font-bold">Worksuite</h3>
+                            <p class="text-sm text-gray-500">Bộ công cụ quản lý toàn diện</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 flex-grow">Giải pháp "tất cả trong một" giúp quản lý mọi khía cạnh của doanh nghiệp: từ nhân sự, chấm công, đến tài chính và bán hàng.</p>
+                    <div class="my-4 border-t pt-4">
+                        <p class="font-semibold mb-2">Tính năng chính:</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Quản lý Nhân sự (HRM)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Chấm công & Bảng lương</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Quản lý Thu-Chi</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Tích hợp CRM & Bán hàng</li>
+                        </ul>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Xem Chi Tiết & Mua</button>
+                </div>
+                
+                <!-- Card 3: Custom Solution -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <div class="flex-shrink-0 flex items-center gap-4 mb-4">
+                        <img src="https://placehold.co/64x64/f3e8ff/7e22ce?text=C" class="w-16 h-16 rounded-lg" alt="Custom Solution Logo">
+                        <div>
+                            <h3 class="text-2xl font-bold">Giải Pháp Tuỳ Chỉnh</h3>
+                            <p class="text-sm text-gray-500">Phần mềm theo yêu cầu của bạn</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 flex-grow">Nếu các giải pháp có sẵn chưa đáp ứng được quy trình đặc thù của bạn, chúng tôi sẽ phân tích và xây dựng một hệ thống phần mềm được "may đo" riêng cho doanh nghiệp.</p>
+                    <div class="my-4 border-t pt-4">
+                        <p class="font-semibold mb-2">Lợi ích:</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Bám sát 100% quy trình vận hành</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Khả năng mở rộng không giới hạn</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Bảo mật theo tiêu chuẩn riêng</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i>Toàn quyền sở hữu mã nguồn</li>
+                        </ul>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-100 text-indigo-700 font-bold py-3 rounded-lg hover:bg-indigo-200">Liên Hệ Tư Vấn</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-software-toggle', 'submenu-software');
+    document.getElementById('submenu-software-toggle').click();
+</script>
+</body>
+</html>

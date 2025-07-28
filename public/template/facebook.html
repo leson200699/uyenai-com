@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Facebook Chuyên Sâu - TechHub</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .submenu-icon {
+            transition: transform 0.2s;
+        }
+        .submenu-open .submenu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- ===== Sidebar ===== -->
+    <aside class="hidden md:flex flex-col w-64 bg-white border-r">
+        <div class="flex items-center justify-center h-16 border-b">
+             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 22c-1.657 0-3-4.477-3-10s1.343-10 3-10 3 4.477 3 10-1.343 10-3 10z"/><path d="M2 12h20"/></svg>
+                <span class="text-gray-800">TechHub</span>
+            </a>
+        </div>
+        <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+                Tổng quan
+            </a>
+            <div>
+                <button id="submenu-dich-vu-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg">
+                    <span class="flex items-center">
+                        <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ & Hạ Tầng
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-dich-vu" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Tên Miền</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Hosting</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Quản trị VPS</a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900">Email Doanh Nghiệp</a>
+                </div>
+            </div>
+            <div>
+                <button id="submenu-mxh-toggle" class="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg mt-2">
+                    <span class="flex items-center">
+                        <i data-lucide="share-2" class="w-5 h-5 mr-3"></i>
+                        Dịch Vụ Mạng Xã Hội
+                    </span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 submenu-icon"></i>
+                </button>
+                <div id="submenu-mxh" class="mt-1 space-y-1 pl-4">
+                    <a href="#" class="flex items-center px-4 py-2 text-sm font-semibold text-indigo-600 rounded-lg bg-indigo-50">Dịch Vụ Facebook</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+        <header class="flex items-center justify-between h-16 px-6 bg-white border-b sticky top-0 z-10">
+            <h1 class="text-xl font-bold text-gray-900">Dịch Vụ Facebook Chuyên Sâu</h1>
+        </header>
+
+        <main class="p-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Giải Pháp Toàn Diện Cho Facebook</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Xây dựng uy tín, bảo vệ tài sản và giải quyết các vấn đề phức tạp liên quan đến tài khoản, fanpage của bạn.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Blue Tick -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i data-lucide="badge-check" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Lên Tích Xanh</h3>
+                    <p class="text-sm text-center text-gray-500 flex-grow mt-2">Xác minh chính chủ cho tài khoản cá nhân và fanpage, tăng độ uy tín và tin cậy tuyệt đối.</p>
+                    <p class="text-2xl font-bold text-center my-4">Liên hệ</p>
+                    <button class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Gửi Yêu Cầu</button>
+                </div>
+
+                <!-- Card 2: Account Recovery -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                     <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                            <i data-lucide="key-round" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Lấy Lại Tài Khoản</h3>
+                    <p class="text-sm text-center text-gray-500 flex-grow mt-2">Khôi phục tài khoản bị hack, bị vô hiệu hóa hoặc quên thông tin đăng nhập với tỉ lệ thành công cao.</p>
+                    <p class="text-2xl font-bold text-center my-4">Từ 3.000.000đ</p>
+                    <button class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Gửi Yêu Cầu</button>
+                </div>
+
+                <!-- Card 3: Report -->
+                <div class="bg-white border rounded-xl shadow-sm p-6 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                            <i data-lucide="shield-off" class="w-8 h-8 text-red-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Báo Cáo & Xử Lý Vi Phạm</h3>
+                    <p class="text-sm text-center text-gray-500 flex-grow mt-2">Xử lý các tài khoản mạo danh, fanpage giả mạo, nội dung vi phạm bản quyền hoặc bôi nhọ danh dự.</p>
+                    <p class="text-2xl font-bold text-center my-4">Từ 5.000.000đ</p>
+                    <button class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700">Gửi Yêu Cầu</button>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border p-8 max-w-4xl mx-auto mt-12">
+                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Gửi Yêu Cầu Dịch Vụ</h2>
+                 <div class="space-y-4">
+                    <div>
+                        <label for="service-select" class="font-semibold text-sm">Chọn dịch vụ bạn cần</label>
+                        <select id="service-select" class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                            <option>Lên Tích Xanh</option>
+                            <option>Lấy Lại Tài Khoản</option>
+                            <option>Báo Cáo & Xử Lý Vi Phạm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="profile-url" class="font-semibold text-sm">Link Facebook Profile / Fanpage</label>
+                        <input id="profile-url" type="text" placeholder="Dán link Facebook của bạn hoặc của đối tượng cần xử lý" class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                     <div>
+                        <label for="description" class="font-semibold text-sm">Mô tả chi tiết vấn đề</label>
+                        <textarea id="description" placeholder="Mô tả rõ vấn đề bạn đang gặp phải để chúng tôi có thể hỗ trợ tốt nhất..." class="w-full mt-1 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" rows="4"></textarea>
+                    </div>
+                    <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 text-lg">Gửi thông tin</button>
+                 </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    function setupSubmenuToggle(toggleId, submenuId) {
+        const toggleButton = document.getElementById(toggleId);
+        const submenu = document.getElementById(submenuId);
+        if (toggleButton && submenu) {
+            toggleButton.addEventListener('click', () => {
+                submenu.classList.toggle('hidden');
+                toggleButton.classList.toggle('submenu-open');
+            });
+        }
+    }
+    setupSubmenuToggle('submenu-dich-vu-toggle', 'submenu-dich-vu');
+    setupSubmenuToggle('submenu-mxh-toggle', 'submenu-mxh');
+    document.getElementById('submenu-mxh-toggle').click();
+</script>
+</body>
+</html>
